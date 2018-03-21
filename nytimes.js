@@ -19,7 +19,7 @@ $(document).ready(function(){
         }).then(function(response){
             for(let i = 0 ; i  < response.response.docs.length; i++ ){
                 const newsTemplate = `<div class="well">
-                 <h3> <lable class="label-primary label-styling">${i}</lable> ${response.response.docs[i].headline.print_headline}</h3>
+                 <h3> <lable class="label-primary label-style">${i}</lable> ${response.response.docs[i].headline.print_headline}</h3>
                  <h5>${response.response.docs[i].byline.original}</h5>
                  </div>`;
 
