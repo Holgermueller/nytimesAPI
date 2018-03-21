@@ -8,7 +8,7 @@ $(document).ready(function(){
 
     $("#search-button").on("click",function(){
         $.ajax({
-        url: queryURL,
+        url: "http://api.nytimes.com/svc/search/v2/articlesearch.json?qdenzelfacet_field=source&begin_date=20010101&end_date=20021231&api-key=7ed0a22d92cc4cd9b5fd37efbca49ff9",
         method: "GET"
         }).then(function renderNewsStories(response){
           console.log(response);
