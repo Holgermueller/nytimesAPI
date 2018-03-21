@@ -11,7 +11,11 @@ $(document).ready(function(){
         let endYear = $("#start-year").val()
         let dropDown= $("#num-records").val()
 
-        let queryURL = "http://api.nytimes.com/svc/search/v2/articlesearch.json?q="+searchField+"&api-key=7ed0a22d92cc4cd9b5fd37efbca49ff9";
+        console.log(beginYear, endYear); 
+
+        endYear.toString(); 
+        beginYear.toString(); 
+        let queryURL = `http://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchField}&facet_field=source&begin_date=${beginYear}0101&end_date=${endYear}1231&api-key=7ed0a22d92cc4cd9b5fd37efbca49ff9`;
    
         $.ajax({
         url:queryURL,
