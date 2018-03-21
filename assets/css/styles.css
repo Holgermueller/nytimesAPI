@@ -12,3 +12,10 @@
     background-color: #2b3e4e;
     color: #ffffff;
 }
+
+.label-style {
+    padding: 2px 8px;
+    background-color: #2b3e4e;
+    color: #ffffff;
+    border-radius: 10%;
+}
