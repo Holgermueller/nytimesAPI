@@ -17,14 +17,17 @@ $(document).ready(function(){
         url:queryURL,
         method: "GET"
         }).then(function(response){
-          console.log(response);
+            for(let i = 0 ; i  < response.response.docs.length; i++ ){
+                const newsTemplate = `<div class="well">
+                 <h3> <lable class="label-primary">${i}</lable> ${response.response.docs[i].headline.print_headline}</h3>
+                 <h5>${response.response.docs[i].byline.original}</h5>
+                 </div>`;
+
+                 $('.results').append(newsTemplate);
+            }
+          console.log(response.response.docs[0]);
           console.log(searchField);
-        // const newsTemplate = `<div class="well">
-        // <h3> <lable class="label-primary">${count}</lable> ${Title}</h3>
-        // <h5>${author}</h5>
-        // </div>`;
-    
-        // $('.results').append(newsTemplate);
+
    
         });
     });
