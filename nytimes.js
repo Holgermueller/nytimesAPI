@@ -11,11 +11,7 @@ $(document).ready(function(){
         let endYear = $("#start-year").val()
         let dropDown= $("#num-records").val()
 
-        console.log(beginYear, endYear); 
-
-        endYear.toString(); 
-        beginYear.toString(); 
-        let queryURL = `http://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchField}&facet_field=source&begin_date=${beginYear}0101&end_date=${endYear}1231&api-key=7ed0a22d92cc4cd9b5fd37efbca49ff9`;
+        let queryURL = "http://api.nytimes.com/svc/search/v2/articlesearch.json?q="+searchField+"&api-key=7ed0a22d92cc4cd9b5fd37efbca49ff9";
    
         $.ajax({
         url:queryURL,
@@ -23,16 +19,12 @@ $(document).ready(function(){
         }).then(function(response){
             for(let i = 0 ; i  < response.response.docs.length; i++ ){
                 const newsTemplate = `<div class="well">
-                 <h3> <lable class="label-primary label-style">${i}</lable> ${response.response.docs[i].headline.print_headline}</h3>
+                 <h3> <lable class="label-primary">${i}</lable> ${response.response.docs[i].headline.print_headline}</h3>
                  <h5>${response.response.docs[i].byline.original}</h5>
                  </div>`;
 
                  $('.results').append(newsTemplate);
             }
-          console.log(response.response.docs[0]);
-          console.log(searchField);
-
-   
         });
     });
 });
